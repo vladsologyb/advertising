@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #0b1530, #02040a);
+    color: #ffffff;
+    background-image: url(/images/фон.png);
+    background-position: center top;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+.section {
+    padding: 60px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    margin-top: 16px;
+}
+
+p {
+    color: #d6d9e5;
+    line-height: 1.6;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.price {
+    margin: 16px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    opacity: 0.6;
+    margin-right: 10px;
+}
+
+.new-price {
+    font-size: 28px;
+    color: #ffcc66;
+}
+
+.promo-timer {
+    margin-bottom: 20px;
+    color: #ffcc99;
+}
+
+.cta-btn {
+    padding: 16px 36px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background: #ff8b5a;
+    color: #fff;
+    font-size: 18px;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255,139,90,.4);
+}
+
+.cta-btn.secondary {
+    margin: 30px 0;
+}
+
+
+.hero img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 16px 36px;
+    background: #ff8b5a;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.grid-2,
+.grid-3,
+.grid-4 {
+    display: grid;
+    gap: 24px;
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+    background: rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.mode {
+    text-align: center;
+}
+
+.mode img {
+    width: 100%;
+}
+
+.video-box {
+    max-width: 900px;
+    margin: auto;
+    background: rgba(255,255,255,0.06);
+    padding: 20px;
+    border-radius: 24px;
+}
+
+video {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.review img {
+    width: 100%;
+    border-radius: 16px;
+    margin-top: 12px;
+}
+
+.stars {
+    color: #ffcc66;
+    margin-bottom: 8px;
+}
+
+@keyframes starsMove {
+    from { background-position: center 0; }
+    to { background-position: center 200px; }
+  }
+  
+  .page-bg {
+    animation: starsMove 120s linear infinite;
+  }
+  
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ===== MODAL ===== */
+.modal, .thanks-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.active,
+.thanks-modal.active {
+    display: flex;
+}
+
+.modal-content, .thanks-content {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    padding: 40px 30px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 14px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+}
+
+input.error-input {
+    border: 2px solid #ff5a5a;
+}
+
+input.success {
+    border: 2px solid #5aff9a;
+}
+
+.error {
+    color: #ff7a7a;
+    font-size: 13px;
+    text-align: left;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}

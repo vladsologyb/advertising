@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Нічник Овечка — солодкі сни</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="section hero-section">
+    <div class="container hero">
+        <div class="hero-text">
+            <h1>М'яке світло для найсолодших снів:<br>від першої колискової до першої казки</h1>
+            <div class="price">
+                <span class="old-price">799 грн</span>
+                <span class="new-price">599 грн</span>
+            </div>
+
+            <div class="promo-timer">
+                Акція закінчиться через <strong id="timer"></strong>
+            </div>
+            <p>
+                Універсальний нічник-антистрес, що підлаштовується під ваші потреби.
+                Створіть атмосферу спокою для немовляти або допоможіть старшій дитині
+                подолати нічні страхи.
+            </p>
+            
+            <button class="cta-btn open-modal">Хочу таку овечку</button>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/hero-sheep.png" alt="Нічник овечка">
+        </div>
+    </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="section">
+    <div class="container">
+        <h2 class="center">Один нічник — багато завдань</h2>
+
+        <div class="grid-2">
+            <div class="card">
+                <img src="images/baby-mom.jpg" alt="">
+                <h3>Для найменших (0–2 роки)</h3>
+                <p>
+                    Тихий помічник для мами. М'яке тьмяне світло для нічних годувань
+                    та зміни підгузків, не порушуючи сон малюка.
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="images/kid-bed.jpg" alt="">
+                <h3>Для дослідників (3–6 років)</h3>
+                <p>
+                    Захисник від нічних монстрів. М’яка, приємна на дотик овечка,
+                    яку можна брати з собою в ліжко.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MODES -->
+<section class="section">
+    <div class="container">
+        <h2 class="center">Три рівні затишку</h2>
+
+        <div class="grid-3">
+            <div class="mode">
+                <img src="images/mode-night.jpg">
+                <h3>Нічне небо</h3>
+                <p>Ледь помітне світіння для глибокого сну</p>
+            </div>
+
+            <div class="mode">
+                <img src="images/mode-evening.jpg">
+                <h3>Вечірній затишок</h3>
+                <p>Тепле світло для обіймів і підготовки до сну</p>
+            </div>
+
+            <div class="mode">
+                <img src="images/mode-book.jpg">
+                <h3>Казковий час</h3>
+                <p>Яскраве світло для читання улюблених книжок</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TECH -->
+<section class="section">
+    <div class="container">
+        <h2 class="center">Технічні переваги</h2>
+
+        <div class="grid-4">
+            <div class="card tech">
+                <img src="images/tech-silicone.jpg">
+                <h3>Харчовий силікон</h3>
+                <p>Безпечно навіть якщо дитина тягне до рота</p>
+            </div>
+
+            <div class="card tech">
+                <img src="images/tech-battery.png">
+                <h3>Акумулятор</h3>
+                <p>Зарядка через USB, без батарейок</p>
+            </div>
+
+            <div class="card tech">
+                <img src="images/tech-led.png">
+                <h3>Безпечне LED-світло</h3>
+                <p>Не нагрівається, можна спати в обіймах</p>
+            </div>
+
+            <div class="card tech">
+                <img src="images/tech-touch.jpg">
+                <h3>Управління дотиком</h3>
+                <p>Легкий дотик — зміна режиму</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VIDEO -->
+<section class="section">
+    <div class="container">
+        <h2 class="center">Подивіться, як працює нічник-овечка</h2>
+
+        <div class="video-box">
+            <video controls poster="images/video-preview.jpg">
+                <source src="video/video-preview.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section">
+    <div class="container">
+        <h2 class="center">Відгуки наших клієнтів</h2>
+
+        <div class="grid-3">
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <strong>Марина Ярославська</strong>
+                <p>Ідеальний нічник для новонародженого.</p>
+                <img src="images/review1.jpg">
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <strong>Дарина Нікітенко</strong>
+                <p>Син засинає тільки з овечкою.</p>
+                <img src="images/review2.jpg">
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <strong>Євгенія Пономарьова</strong>
+                <p>Дуже мʼяка та безпечна.</p>
+                <img src="images/review3.jpg">
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal" id="orderModal">
+    <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <h2>Оформити замовлення</h2>
+
+        <form id="orderForm">
+            <input type="text" id="name" placeholder="Ваше імʼя">
+            <small class="error" id="nameError"></small>
+
+            <input type="tel" id="phone" placeholder="+380 ХХ ХХХ ХХ ХХ">
+            <small class="error" id="phoneError"></small>
+
+            <button type="submit" class="cta-btn">Замовити</button>
+        </form>
+    </div>
+</div>
+
+<!-- THANK YOU -->
+<div class="thanks-modal" id="thanksModal">
+    <div class="thanks-content">
+        <h2>Дякуємо! 💛</h2>
+        <p>Ми звʼяжемось з вами найближчим часом</p>
+        <button class="cta-btn" onclick="closeThanks()">Добре</button>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
