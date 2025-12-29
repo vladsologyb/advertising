@@ -1,6 +1,6 @@
 const modal = document.getElementById('orderModal');
 const thanksModal = document.getElementById('thanksModal');
-const openButtons = document.querySelectorAll('.open-modal');
+const openButtons = document.querySelectorAll('.open-order');
 const closeModalBtn = document.querySelector('.close-modal');
 const form = document.getElementById('orderForm');
 const nameInput = document.getElementById('name');
@@ -8,16 +8,23 @@ const phoneInput = document.getElementById('phone');
 const nameError = document.getElementById('nameError');
 const phoneError = document.getElementById('phoneError');
 
-/* OPEN / CLOSE */
+/* OPEN MODAL */
 openButtons.forEach(btn => {
-    btn.addEventListener('click', () => modal.classList.add('active'));
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.add('active');
+    });
 });
 
-closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+/* CLOSE MODAL */
+closeModalBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
 
-function closeThanks() {
-    thanksModal.classList.remove('active');
-}
+/* CLOSE ON BACKDROP */
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.remove('active');
+});
 
 /* PHONE +380 */
 phoneInput.addEventListener('focus', () => {
@@ -54,12 +61,26 @@ function validatePhone() {
 }
 
 /* SUBMIT */
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (validateName() && validatePhone()) {
+
+    if (!validateName() || !validatePhone()) return;
+
+    try {
+        await fetch('/api/sendTelegram', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: nameInput.value,
+                phone: phoneInput.value
+            })
+        });
+
         modal.classList.remove('active');
         thanksModal.classList.add('active');
         form.reset();
+    } catch (err) {
+        alert('Помилка відправки. Спробуйте пізніше.');
     }
 });
 
@@ -81,8 +102,31 @@ function updateTimer() {
     const d = Math.floor(diff / (1000 * 60 * 60 * 24));
     const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const m = Math.floor((diff / (1000 * 60)) % 60);
-    document.getElementById('timer').textContent = `${d}д ${h}г ${m}хв`;
+    const s = Math.floor((diff / 1000) % 60);
+
+    const timer = document.getElementById('timer');
+    if (timer) {
+        timer.textContent = `${d}д ${h}г ${m}хв ${s}с`;
+    }
 }
 
-setInterval(updateTimer, 60000);
+setInterval(updateTimer, 1000);
 updateTimer();
+
+function closeThanks() {
+    thanksModal.classList.remove('active');
+}
+
+/* CLOSE THANKS ON BACKDROP */
+thanksModal.addEventListener('click', (e) => {
+    if (e.target === thanksModal) {
+        thanksModal.classList.remove('active');
+    }
+});
+
+/* CLOSE THANKS ON ESC */
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        thanksModal.classList.remove('active');
+    }
+});

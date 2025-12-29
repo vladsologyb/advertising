@@ -28,11 +28,11 @@
                 подолати нічні страхи.
             </p>
             
-            <button class="cta-btn open-modal">Хочу таку овечку</button>
+            <button class="cta-btn open-order">Хочу таку овечку</button>
         </div>
 
         <div class="hero-image">
-            <img src="images/hero-sheep.png" alt="Нічник овечка">
+            <img class="img-hero" src="images/hero-sheep.png" alt="Нічник овечка">
         </div>
     </div>
 </section>
@@ -104,7 +104,7 @@
             </div>
 
             <div class="card tech">
-                <img src="images/tech-battery.png">
+                <img src="images/tech-battery.jpeg">
                 <h3>Акумулятор</h3>
                 <p>Зарядка через USB, без батарейок</p>
             </div>
@@ -121,16 +121,22 @@
                 <p>Легкий дотик — зміна режиму</p>
             </div>
         </div>
+        <!-- CTA BEFORE VIDEO -->
+        <div class="video-cta">
+            <a href="#" class="cta-btn cta-animate open-order">
+                Хочу замовити
+            </a>
+        </div>
     </div>
 </section>
 
 <!-- VIDEO -->
-<section class="section">
+<section class="section video-container">
     <div class="container">
         <h2 class="center">Подивіться, як працює нічник-овечка</h2>
 
         <div class="video-box">
-            <video controls poster="images/video-preview.jpg">
+            <video controls poster="video/video-preview.jpg">
                 <source src="video/video-preview.mp4" type="video/mp4">
             </video>
         </div>
@@ -147,21 +153,18 @@
                 <div class="stars">★★★★★</div>
                 <strong>Марина Ярославська</strong>
                 <p>Ідеальний нічник для новонародженого.</p>
-                <img src="images/review1.jpg">
             </div>
 
             <div class="review">
                 <div class="stars">★★★★★</div>
                 <strong>Дарина Нікітенко</strong>
                 <p>Син засинає тільки з овечкою.</p>
-                <img src="images/review2.jpg">
             </div>
 
             <div class="review">
                 <div class="stars">★★★★★</div>
                 <strong>Євгенія Пономарьова</strong>
                 <p>Дуже мʼяка та безпечна.</p>
-                <img src="images/review3.jpg">
             </div>
         </div>
     </div>
@@ -193,6 +196,7 @@
 </div>
 
 <script src="js/script.js"></script>
+<script src="js/form.js"></script>
 
 </body>
 </html>
